@@ -1,3 +1,5 @@
+<?php
+
 $databases = array (
   'default' =>
   array (
@@ -13,3 +15,5 @@ $databases = array (
     ),
   ),
 );
+
+?>
