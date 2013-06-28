@@ -7,23 +7,27 @@ echo -e "OpenNeighborhood Deployment Script"
 echo "What tag would you like to deploy? (e.g., 2013-06-21) "
 read tag
 
+echo "What environment for Drupal operations? (e.g., dev.on, stage.on, on) "
+read env
+
 echo "Pulling $tag.. "
+git checkout master
 git pull
 git fetch --tags
 git checkout $tag
 echo -e "complete."
 
 echo "Updating Drupal database.. "
-drush updatedb -y
+drush @$env updatedb -y
 echo -e "complete."
 
 echo "Reverting features.. "
-drush en features
-drush features-revert-all -y
+drush @env  en features
+drush @env  features-revert-all -y
 echo -e "complete."
 
 echo "Clearing caches.. "
-drush cc all
+drush @env cc all
 echo -e "complete."
 
 echo -e "Don't forget to run on-sync and drupal-permissions if needed.."
