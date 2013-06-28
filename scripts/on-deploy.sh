@@ -22,12 +22,12 @@ drush @$env updatedb -y
 echo -e "complete."
 
 echo "Reverting features.. "
-drush @env  en features
-drush @env  features-revert-all -y
+drush @$env  en features
+drush @$env  features-revert-all -y
 echo -e "complete."
 
 echo "Clearing caches.. "
-drush @env cc all
+drush @$env cc all
 echo -e "complete."
 
 echo -e "Don't forget to run on-sync and drupal-permissions if needed.."
