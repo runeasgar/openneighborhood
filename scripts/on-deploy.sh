@@ -11,6 +11,7 @@ echo "What environment for Drupal operations? (e.g., dev.on, stage.on, on) "
 read env
 
 echo "Pulling $tag.. "
+git reset --hard HEAD
 git checkout master
 git pull
 git fetch --tags
