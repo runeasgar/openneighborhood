@@ -7,7 +7,7 @@ echo -e "OpenNeighborhood Deployment Script"
 echo "What tag would you like to deploy? (e.g., 2013-06-21) "
 read tag
 
-echo "What environment for Drupal operations? (e.g., dev.on, stage.on, on) "
+echo "What environment for Drupal operations? (e.g., dev.on, stage.on, prod.on) "
 read env
 
 echo "Pulling $tag.. "

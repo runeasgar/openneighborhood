@@ -4,10 +4,10 @@ set -o errexit
 
 echo -e "OpenNeighborhood Database Sync"
 
-echo "Source environment (dev.on, stage.on, on): "
+echo "Source environment (dev.on, stage.on, prod.on): "
 read srcenv
 
-echo "Destination environment (dev.on, stage.on, on): "
+echo "Destination environment (dev.on, stage.on, prod.on): "
 read destenv
 
 echo "Beginning drush sql-sync.. "
